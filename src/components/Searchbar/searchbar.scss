@@ -1,0 +1,155 @@
+.inputsholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,.5);
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        aspect-ratio: 1/2;
+        background: #ee1515;
+        top: 50%;
+        left: 50%;
+        transform: translate(-110.2%, -50%) rotate(35deg);
+        box-shadow: 0 0 20px 5px rgba(0,0,0,.5);
+        border-right: 20px solid #222224;
+    }
+
+}
+
+.searchinp {
+    font-size: 24.16px;
+    padding: 5px 15px;
+    width: 20%;
+    border: none;
+    outline: none;
+    border-radius: 100px 0 0 100px;
+    z-index: 5;
+}
+
+.searchbtn {
+    font-size: 25px;
+    padding: 7px;
+    padding-right: 9px;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    background: white;
+    color: #222224;
+    border: none;
+    border-radius: 0 100px 100px 0;
+    outline: none;
+    cursor: pointer;
+    z-index: 5;
+
+    svg {
+        transition: transform 1s, opacity 150ms;
+        opacity: .6;  
+    }
+
+    
+    &:hover, &:focus-visible {
+        @keyframes jiggle {
+            50% {
+                transform: rotate(30deg)
+            }
+    
+            to {
+                transform: rotate(0deg)
+            } 
+        }
+        
+        svg {
+            animation: jiggle 500ms;
+            opacity: 1;
+        }
+    }
+}
+
+
+// RESPONSIVE 
+@media (max-width: 1024px) {
+
+    .inputsholder {
+        &::before {
+            transform: translate(-90.2%, -50%) rotate(35deg);
+        }
+    }
+
+    .searchinp {
+        width: 25%;
+        font-size: 20.16px;
+    }
+
+    .searchbtn {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .inputsholder {
+        &::before {
+            transform: translate(-90.2%, -50%) rotate(35deg);
+        }
+    }
+
+    .searchinp {
+        width: 35%;
+        font-size: 18.16px;
+    }
+
+    .searchbtn {
+        font-size: 18px;
+    }
+}
+
+
+@media (max-width: 525px) {
+
+    .inputsholder {
+        &::before {
+            transform: translate(-90.2%, -50%) rotate(35deg);
+        }
+    }
+
+    .searchinp {
+        width: 45%;
+        font-size: 18.16px;
+    }
+
+    .searchbtn {
+        font-size: 18px;
+    }
+}
+
+
+@media (max-width: 420px) {
+    .inputsholder {
+        &:before {
+            width: 100%;
+            height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: none;
+        }
+    }
+
+    .searchinp {
+        width: 60%;
+        font-size: 18.16px;
+    }
+
+    .searchbtn {
+        font-size: 18px;
+    }
+}

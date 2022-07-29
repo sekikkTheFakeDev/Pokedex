@@ -1,0 +1,51 @@
+.holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    grid-row: var(--span);
+}
+
+.evolution {
+    width: 100%;
+    height: var(--height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.imgholder {
+    background: whitesmoke;
+    border: 5px solid #222224;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 500ms ease;
+
+    &:hover {
+        transform: translateY(-10px)
+    }
+}
+
+.evoimg {
+    width: 70%;
+    aspect-ratio: 1/1;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+}
+
+.text {
+    color: whitesmoke;
+    
+    .evoid {
+        letter-spacing: 2px;
+        opacity: .5;
+    }
+}

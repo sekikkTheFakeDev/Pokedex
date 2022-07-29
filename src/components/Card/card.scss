@@ -1,0 +1,48 @@
+.card {
+    background: cyan;
+    border-radius: 15px;
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    transition: transform 250ms ease;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,.25));
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+}
+
+.img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 30px;
+    transition: transform 250ms ease-in;
+}
+
+.txtholder {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cardname {
+    font-weight: bold;
+}
+
+.types {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}

@@ -1,0 +1,498 @@
+:root {
+    --font: 24px
+}
+
+.info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+}
+
+.left {
+    width: 47%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.right {
+    width: 53%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+boxes {
+    border-radius: 20px;
+}
+
+
+.basic {
+    @extend boxes;
+    background: whitesmoke;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+
+    basicpadding {
+        padding: 15px 30px;
+    }
+
+    .btop {
+        @extend basicpadding;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .infotext {
+            width: 60%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+        
+        .name {
+            width: 100%;
+            height: 15%;
+            font-size: calc(var(--font) + 8px);
+            word-wrap: break-word;
+            word-break: break-all;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        
+            .id {
+                font-weight: normal;
+                opacity: .5;
+                letter-spacing: 3px;
+            }
+        
+        }
+        
+        
+        .squares {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            gap: 50px;
+        }
+        
+        .lsq, .rsq {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .txtbox {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: var(--font);
+            color: rgba(0,0,0,.5);
+            
+            .t {
+                color: black;
+            }
+        }
+        
+        .infotypes {
+            .typ {
+                width: max-content;
+                display: flex;
+                gap: 5px;
+            }
+        
+            .type {
+                font-size: calc(var(--font) - 4px);
+                padding: 5px;
+                border-radius: 5px;
+            }
+        }
+        
+        .infoimg {
+            width: 40%;
+            aspect-ratio: 1 / 1;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: drop-shadow(0 0 10px rgba(0,0,0,.7))
+        }
+
+    }
+
+    .bbottom {
+        width: 100%;
+        height: 50%;
+
+
+        .abilities {
+            @extend basicpadding;
+            width: 100%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+
+            .t {
+                font-size: var(--font);
+            }
+
+            .blur {
+                width: 100%;
+                height: 100%;
+                background: rgba(255,255,255,.2);
+                border-radius: 20px 20px 0 0;
+                backdrop-filter: blur(5px);
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: whitesmoke;
+                top: 0;
+                left: 0;
+                z-index: 5;
+                pointer-events: none;
+                opacity: 0;
+                transition: opacity 150ms ease;
+
+                .abilityinfo {
+                    width: 90%;
+                    height: max-content;
+                    background: #0c54ad;
+                    border-radius: 20px;
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    gap: 15px;
+
+                    .x {
+                        font-size: 40px;
+                        position: absolute;
+                        top: 2.5%;
+                        left: 93%;
+                        cursor: pointer;
+                    }
+
+                }
+            }
+
+            .abs {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                font-size: calc(var(--font) - 2px);
+
+                .ability {
+                    display: flex;
+                    gap: 15px;
+
+                    span {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: var(--font);
+                        cursor: pointer;
+                        transition: opacity 250ms;
+                        opacity: .5;
+
+                        svg {
+                            pointer-events: none;
+                        }
+
+                        @keyframes rotate{
+                            to {
+                                transform: rotate(360deg);
+                            }
+                        }
+
+                        &:hover {
+                            animation: rotate .5s;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        .navigate {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            nav {
+                width: 40%;
+                height: 70%;
+                background: #117cff;
+                display: flex;
+                align-items: center;
+                padding: 25px;
+                color: white;
+                gap: 10px;
+                font-size: calc(var(--font) - 4px);
+                cursor: pointer;
+                transition: background 250ms ease;
+
+                .pnid {
+                    opacity: .5;
+                    letter-spacing: 2px;
+                }
+
+                .navtext {
+                    width: 70%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    gap: 5px;
+                }
+
+                &:hover {
+                    background: #2487ff;
+                }
+
+                &::before, &::after {
+                    pointer-events: none;
+                }
+
+            }
+            
+            .leftnav {
+                @extend nav;
+                clip-path: polygon(85% 0, 100% 30%, 100% 100%, 0 100%, 0 0);
+
+
+            }
+
+            .rightnav {
+                @extend nav;
+                justify-content: flex-end;
+                clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 30%);
+            }
+
+        }
+    }
+
+    
+}
+
+
+.evolutionsholder {
+    @extend boxes;
+    background: transparent url("https://assets.pokemon.com/static2/_ui/img/chrome/body_gray_bg.png");
+    width: 100%;
+    height: 70%;
+    position: relative;
+
+    .evo {
+        position: absolute;
+        font-size: 30px;
+        color: whitesmoke;
+        opacity: .2;
+        top: 2.5%;
+        left: 2.5%;
+    }
+}
+
+.statsholder {
+    @extend boxes;
+    background: #254552;
+    width: 100%;
+    height: 50%;
+}
+
+
+//RESPONSIVE 
+
+@media (max-width: 1440px) {
+    .x {
+        left: 91% !important;
+    }
+}
+
+@media (max-width: 1120px) {
+
+    :root {
+        --font: 25px;
+    }
+
+
+    nav {
+        width: 30%;
+    }
+
+    .group::after {
+        width: 32px !important;
+        transform: translate(220%, -82.5%) !important;
+    }
+
+    .statsholder {
+        font-size: 14px;
+
+        .statname {
+            width: 14ch;
+        }
+
+        .base {
+            font-size: 12px !important;
+        }
+
+        .meter {
+            padding: 3px;
+        }
+    }
+
+}
+
+@media (max-width: 1024px) {
+
+    :root {
+        --font: 20px;
+    }
+
+    .info {
+        flex-direction: column;
+        overflow-y: overlay;
+        overflow-x: hidden;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    nav {
+        width: 30%;
+    }
+
+    .group::after {
+        transform: translate(130%, -82.5%) !important;
+    }
+
+    .statsholder {
+        font-size: 14px;
+
+        .statname {
+            width: 14ch;
+        }
+
+        .base {
+            font-size: 12px !important;
+        }
+
+        .meter {
+            padding: 3px;
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    :root {
+        --font: 20px;
+    }
+
+    .info {
+        flex-direction: column;
+        overflow-y: overlay;
+        overflow-x: hidden;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    nav {
+        width: 30%;
+    }
+
+    .evolutionsholder {
+        display: none;
+    }
+
+    .statsholder {
+        height: 100%;
+        font-size: 14px;
+
+        .statname {
+            width: 14ch;
+        }
+
+        .base {
+            font-size: 12px !important;
+        }
+
+        .meter {
+            padding: 3px;
+        }
+    }
+
+}
+
+@media (max-width: 425px) {
+
+    :root {
+        --font: 18px;
+    }
+
+    .info {
+        flex-direction: column;
+        overflow-y: overlay;
+        overflow-x: hidden;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+
+    nav {
+        width: 49%;
+    }
+
+    .x {
+        left: 85% !important;
+    }
+
+    .evolutionsholder {
+        display: none;
+    }
+
+    .statsholder {
+        height: 100%;
+        font-size: 12px;
+
+        .statname {
+            width: 14ch;
+        }
+
+        .bar {
+            width: 50%;
+        }
+
+        .base {
+            font-size: 12px !important;
+        }
+
+        .meter {
+            padding: 3px;
+        }
+    }
+
+}
