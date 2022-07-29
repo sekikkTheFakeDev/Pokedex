@@ -1,10 +1,13 @@
-@import url(//db.onlinewebfonts.com/c/d2d21cf0ee4c1d969d8a4dccc587ab26?family=Flexo+Medium);
+@font-face {
+    font-family: "Flexo";
+    src: url("./Flexo-Medium.ttf");
+}
 
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Flexo Medium", "Sans-Serif";
+    font-family: "Flexo", sans-serif;
 }
 
 ::-webkit-scrollbar {
